@@ -224,7 +224,7 @@ type server struct {
 
 	// nodeSigner is an implementation of the MessageSigner implementation
 	// that's backed by the identity private key of the running lnd node.
-	nodeSigner *netann.NodeSigner
+	nodeSigner lnwallet.CompactMessageSigner
 
 	chanStatusMgr *netann.ChanStatusManager
 

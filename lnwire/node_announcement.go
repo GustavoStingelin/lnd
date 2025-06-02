@@ -56,6 +56,14 @@ func NewNodeAlias(s string) (NodeAlias, error) {
 	return n, nil
 }
 
+func MustParseNodeAlias(s string) NodeAlias {
+	n, err := NewNodeAlias(s)
+	if err != nil {
+		panic(fmt.Sprintf("failed to parse node alias: %v", err))
+	}
+	return n
+}
+
 // String returns a utf8 string representation of the alias bytes.
 func (n NodeAlias) String() string {
 	// Trim trailing zero-bytes for presentation

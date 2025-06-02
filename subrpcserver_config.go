@@ -2,6 +2,7 @@ package lnd
 
 import (
 	"fmt"
+	"github.com/lightningnetwork/lnd/lnwallet"
 	"net"
 	"reflect"
 
@@ -112,7 +113,7 @@ func (s *subRPCServerConfigs) PopulateDependencies(cfg *Config,
 	activeNetParams *chaincfg.Params,
 	chanRouter *routing.ChannelRouter,
 	routerBackend *routerrpc.RouterBackend,
-	nodeSigner *netann.NodeSigner,
+	nodeSigner lnwallet.CompactMessageSigner,
 	graphDB *graphdb.ChannelGraph,
 	chanStateDB *channeldb.ChannelStateDB,
 	sweeper *sweep.UtxoSweeper,

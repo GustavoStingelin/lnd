@@ -6,6 +6,7 @@ import (
 	"crypto/rand"
 	"errors"
 	"fmt"
+	"github.com/lightningnetwork/lnd/lnwallet"
 	"math"
 	mathRand "math/rand"
 	"sort"
@@ -23,7 +24,6 @@ import (
 	"github.com/lightningnetwork/lnd/lntypes"
 	"github.com/lightningnetwork/lnd/lnutils"
 	"github.com/lightningnetwork/lnd/lnwire"
-	"github.com/lightningnetwork/lnd/netann"
 	"github.com/lightningnetwork/lnd/routing"
 	"github.com/lightningnetwork/lnd/routing/blindedpath"
 	"github.com/lightningnetwork/lnd/routing/route"
@@ -64,7 +64,7 @@ type AddInvoiceConfig struct {
 
 	// NodeSigner is an implementation of the MessageSigner implementation
 	// that's backed by the identity private key of the running lnd node.
-	NodeSigner *netann.NodeSigner
+	NodeSigner lnwallet.CompactMessageSigner
 
 	// DefaultCLTVExpiry is the default invoice expiry if no values is
 	// specified.

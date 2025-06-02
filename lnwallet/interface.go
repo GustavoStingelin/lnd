@@ -602,6 +602,11 @@ type MessageSigner interface {
 		doubleHash bool) (*ecdsa.Signature, error)
 }
 
+type CompactMessageSigner interface {
+	MessageSigner
+	SignMessageCompact(msg []byte, doubleHash bool) ([]byte, error)
+}
+
 // AddrWithKey wraps a normal addr, but also includes the internal key for the
 // delivery addr if known.
 type AddrWithKey struct {
