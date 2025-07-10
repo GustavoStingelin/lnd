@@ -37,6 +37,9 @@
   can cause contract resolvers to be stuck at marking the channel force close as
   being complete.
 
+- Fixed [zombie channel leak](https://github.com/lightningnetwork/lnd/pull/10015)
+  in the memory graph, resulting in incorrect path finding and memory usage.
+
 # New Features
 
 ## Functional Enhancements
@@ -212,6 +215,7 @@ reader of a payment request.
 * Elle Mouton
 * Erick Cestari
 * Funyug
+* Gustavo Stingelin
 * Mohamed Awnallah
 * Pins
 * Torkel Rogstad
