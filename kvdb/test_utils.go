@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"os"
 	"testing"
+
+	"github.com/lightningnetwork/lnd/lntest/leakcheck"
 )
 
 // RunTests is a helper function to run the tests in a package with
@@ -29,6 +31,11 @@ func RunTests(m *testing.M) {
 		}
 	}
 
-	os.Exit(code)
+	// Check for goroutine leaks if the experiment is enabled.
+	if leakErr := leakcheck.Check(); leakErr != nil {
+		fmt.Fprintf(os.Stderr, "LEAK DETECTED: %v\n", leakErr)
+		code = 1
+	}
 
+	os.Exit(code)
 }
