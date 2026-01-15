@@ -1,0 +1,123 @@
+LEAK DETECTED: goroutine leak detected:
+goroutine 1 [running]:
+runtime/pprof.writeGoroutineStacks({0x101c05c80, 0xc002b7ae10})
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:820 +0x74
+runtime/pprof.writeGoroutineLeak({0x101c05c80, 0xc002b7ae10}, 0x2)
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:807 +0x98
+runtime/pprof.(*Profile).WriteTo(0x101cda640, {0x101c05c80, 0xc002b7ae10}, 0x2)
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:409 +0x138
+github.com/lightningnetwork/lnd/lntest/leakcheck.Check()
+	/Users/head/code/lnd/lntest/leakcheck/leakcheck.go:32 +0x94
+github.com/lightningnetwork/lnd/lnwallet/test/bitcoind_test.TestMain(0xc00028e6e0)
+	/Users/head/code/lnd/lnwallet/test/bitcoind/leak_test.go:18 +0x34
+main.main()
+	_testmain.go:50 +0x108
+
+goroutine 30 [chan receive (leaked)]:
+github.com/btcsuite/btcd/integration/rpctest.(*memWallet).chainSyncer(0xc00018c900)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/integration/rpctest/memwallet.go:230 +0x60
+created by github.com/btcsuite/btcd/integration/rpctest.(*memWallet).Start in goroutine 24
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/integration/rpctest/memwallet.go:162 +0x84
+
+goroutine 84 [chan receive (leaked)]:
+github.com/btcsuite/btcd/integration/rpctest.(*memWallet).chainSyncer(0xc0009b81b0)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/integration/rpctest/memwallet.go:230 +0x60
+created by github.com/btcsuite/btcd/integration/rpctest.(*memWallet).Start in goroutine 23
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/integration/rpctest/memwallet.go:162 +0x84
+
+goroutine 1539 [select (leaked)]:
+github.com/btcsuite/btcd/rpcclient.(*Client).sendPostHandler(0xc0016d40d0)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:899 +0xbc
+created by github.com/btcsuite/btcd/rpcclient.(*Client).start in goroutine 1537
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:1182 +0x184
+
+goroutine 1555 [select (leaked)]:
+github.com/btcsuite/btcd/rpcclient.(*Client).sendPostHandler(0xc001734d00)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:899 +0xbc
+created by github.com/btcsuite/btcd/rpcclient.(*Client).start in goroutine 96
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:1182 +0x184
+
+goroutine 95 [select]:
+github.com/lightningnetwork/lnd/chainntnfs/btcdnotify.(*BtcdNotifier).notificationDispatcher(0xc001656000)
+	/Users/head/code/lnd/chainntnfs/btcdnotify/btcd.go:342 +0x1e8
+created by github.com/lightningnetwork/lnd/chainntnfs/btcdnotify.(*BtcdNotifier).startNotifier in goroutine 24
+	/Users/head/code/lnd/chainntnfs/btcdnotify/btcd.go:263 +0x594
+
+goroutine 89 [select]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 24
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 1536 [select]:
+github.com/lightningnetwork/lnd/chainntnfs/btcdnotify.(*BtcdNotifier).notificationDispatcher(0xc0010dc180)
+	/Users/head/code/lnd/chainntnfs/btcdnotify/btcd.go:342 +0x1e8
+created by github.com/lightningnetwork/lnd/chainntnfs/btcdnotify.(*BtcdNotifier).startNotifier in goroutine 23
+	/Users/head/code/lnd/chainntnfs/btcdnotify/btcd.go:263 +0x594
+
+goroutine 1554 [select (leaked)]:
+github.com/btcsuite/btcd/rpcclient.(*Client).sendPostHandler(0xc001734d00)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:899 +0xbc
+created by github.com/btcsuite/btcd/rpcclient.(*Client).start in goroutine 96
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:1182 +0x184
+
+goroutine 90 [select, 2 minutes]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 24
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 1535 [sleep]:
+time.Sleep(0x12a05f200)
+	/Users/head/sdk/go1.26rc1/src/runtime/time.go:363 +0x150
+github.com/btcsuite/btcd/rpcclient.(*Client).wsReconnectHandler(0xc0009d49c0)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:726 +0x108
+created by github.com/btcsuite/btcd/rpcclient.(*Client).Connect in goroutine 23
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:1624 +0x3c0
+
+goroutine 1540 [select (leaked)]:
+github.com/btcsuite/btcd/rpcclient.(*Client).sendPostHandler(0xc0016d40d0)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:899 +0xbc
+created by github.com/btcsuite/btcd/rpcclient.(*Client).start in goroutine 1537
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:1182 +0x184
+
+goroutine 94 [sleep]:
+time.Sleep(0x37e11d600)
+	/Users/head/sdk/go1.26rc1/src/runtime/time.go:363 +0x150
+github.com/btcsuite/btcd/rpcclient.(*Client).wsReconnectHandler(0xc00027ba00)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:726 +0x108
+created by github.com/btcsuite/btcd/rpcclient.(*Client).Connect in goroutine 24
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:1624 +0x3c0
+
+goroutine 1603 [chan receive (leaked)]:
+github.com/btcsuite/btcwallet/chain.(*JitterTicker).start(0xc001826000)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/chain/jitter.go:108 +0x100
+created by github.com/btcsuite/btcwallet/chain.NewJitterTicker in goroutine 1617
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/chain/jitter.go:55 +0x260
+
+goroutine 1531 [select, 2 minutes]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 23
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 1530 [select]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 23
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 67110 [chan receive (leaked)]:
+github.com/btcsuite/btcd/integration/rpctest.(*memWallet).chainSyncer(0xc0027f0c60)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/integration/rpctest/memwallet.go:230 +0x60
+created by github.com/btcsuite/btcd/integration/rpctest.(*memWallet).Start in goroutine 64297
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/integration/rpctest/memwallet.go:162 +0x84
+
+goroutine 58733 [chan receive (leaked)]:
+github.com/btcsuite/btcd/integration/rpctest.(*memWallet).chainSyncer(0xc002a3c630)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/integration/rpctest/memwallet.go:230 +0x60
+created by github.com/btcsuite/btcd/integration/rpctest.(*memWallet).Start in goroutine 55788
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/integration/rpctest/memwallet.go:162 +0x84
+
+FAIL	github.com/lightningnetwork/lnd/lnwallet/test/bitcoind	144.044s
+FAIL

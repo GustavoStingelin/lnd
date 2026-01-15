@@ -1,0 +1,65 @@
+LEAK DETECTED: goroutine leak detected:
+goroutine 1 [running]:
+runtime/pprof.writeGoroutineStacks({0x100ab0d00, 0xc0003c63c0})
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:820 +0x74
+runtime/pprof.writeGoroutineLeak({0x100ab0d00, 0xc0003c63c0}, 0x2)
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:807 +0x98
+runtime/pprof.(*Profile).WriteTo(0x100b21f60, {0x100ab0d00, 0xc0003c63c0}, 0x2)
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:409 +0x138
+github.com/lightningnetwork/lnd/lntest/leakcheck.Check()
+	/Users/head/code/lnd/lntest/leakcheck/leakcheck.go:32 +0x94
+github.com/lightningnetwork/lnd/pool_test.TestMain(0xc0000a79a0)
+	/Users/head/code/lnd/pool/leak_test.go:18 +0x34
+main.main()
+	_testmain.go:54 +0x108
+
+goroutine 25 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*GCQueue).queueManager(0xc0000bb380)
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/gc_queue.go:137 +0x518
+created by github.com/lightningnetwork/lnd/queue.NewGCQueue in goroutine 24
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/gc_queue.go:74 +0x30c
+
+goroutine 34 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*GCQueue).queueManager(0xc0003d6000)
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/gc_queue.go:137 +0x518
+created by github.com/lightningnetwork/lnd/queue.NewGCQueue in goroutine 33
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/gc_queue.go:74 +0x30c
+
+goroutine 12 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*GCQueue).queueManager(0xc00015a040)
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/gc_queue.go:137 +0x518
+created by github.com/lightningnetwork/lnd/queue.NewGCQueue in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/gc_queue.go:74 +0x30c
+
+goroutine 35 [select]:
+github.com/lightningnetwork/lnd/queue.(*GCQueue).queueManager(0xc0003d6040)
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/gc_queue.go:137 +0x518
+created by github.com/lightningnetwork/lnd/queue.NewGCQueue in goroutine 8
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/gc_queue.go:74 +0x30c
+
+goroutine 26 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*GCQueue).queueManager(0xc0000bb400)
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/gc_queue.go:137 +0x518
+created by github.com/lightningnetwork/lnd/queue.NewGCQueue in goroutine 9
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/gc_queue.go:74 +0x30c
+
+goroutine 41 [select]:
+github.com/lightningnetwork/lnd/queue.(*GCQueue).queueManager(0xc0003d6080)
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/gc_queue.go:137 +0x518
+created by github.com/lightningnetwork/lnd/queue.NewGCQueue in goroutine 11
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/gc_queue.go:74 +0x30c
+
+goroutine 93 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*GCQueue).queueManager(0xc00047e000)
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/gc_queue.go:137 +0x518
+created by github.com/lightningnetwork/lnd/queue.NewGCQueue in goroutine 6
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/gc_queue.go:74 +0x30c
+
+goroutine 145 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*GCQueue).queueManager(0xc00080e000)
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/gc_queue.go:137 +0x518
+created by github.com/lightningnetwork/lnd/queue.NewGCQueue in goroutine 10
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/gc_queue.go:74 +0x30c
+
+FAIL	github.com/lightningnetwork/lnd/pool	4.315s
+FAIL

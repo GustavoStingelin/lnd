@@ -1,0 +1,65 @@
+LEAK DETECTED: goroutine leak detected:
+goroutine 1 [running]:
+runtime/pprof.writeGoroutineStacks({0x102fff7c0, 0xc000416450})
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:820 +0x74
+runtime/pprof.writeGoroutineLeak({0x102fff7c0, 0xc000416450}, 0x2)
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:807 +0x98
+runtime/pprof.(*Profile).WriteTo(0x103066a40, {0x102fff7c0, 0xc000416450}, 0x2)
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:409 +0x138
+github.com/lightningnetwork/lnd/lntest/leakcheck.Check()
+	/Users/head/code/lnd/lntest/leakcheck/leakcheck.go:32 +0x94
+github.com/lightningnetwork/lnd/keychain.TestMain(0xc000180f00)
+	/Users/head/code/lnd/keychain/leak_test.go:18 +0x34
+main.main()
+	_testmain.go:52 +0x108
+
+goroutine 49 [select (leaked)]:
+github.com/btcsuite/btcwallet/wallet.(*Wallet).txCreator(0xc000000140)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:1238 +0xb8
+created by github.com/btcsuite/btcwallet/wallet.(*Wallet).Start in goroutine 4
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:197 +0x15c
+
+goroutine 50 [select (leaked)]:
+github.com/btcsuite/btcwallet/wallet.(*Wallet).walletLocker(0xc000000140)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:1418 +0x228
+created by github.com/btcsuite/btcwallet/wallet.(*Wallet).Start in goroutine 4
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:198 +0x1bc
+
+goroutine 51 [select (leaked)]:
+github.com/btcsuite/btcwallet/wallet.(*Wallet).txCreator(0xc000000280)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:1238 +0xb8
+created by github.com/btcsuite/btcwallet/wallet.(*Wallet).Start in goroutine 5
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:197 +0x15c
+
+goroutine 52 [select (leaked)]:
+github.com/btcsuite/btcwallet/wallet.(*Wallet).walletLocker(0xc000000280)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:1418 +0x228
+created by github.com/btcsuite/btcwallet/wallet.(*Wallet).Start in goroutine 5
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:198 +0x1bc
+
+goroutine 20 [select (leaked)]:
+github.com/btcsuite/btcwallet/wallet.(*Wallet).txCreator(0xc000000500)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:1238 +0xb8
+created by github.com/btcsuite/btcwallet/wallet.(*Wallet).Start in goroutine 4
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:197 +0x15c
+
+goroutine 82 [select (leaked)]:
+github.com/btcsuite/btcwallet/wallet.(*Wallet).txCreator(0xc0000003c0)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:1238 +0xb8
+created by github.com/btcsuite/btcwallet/wallet.(*Wallet).Start in goroutine 5
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:197 +0x15c
+
+goroutine 83 [select (leaked)]:
+github.com/btcsuite/btcwallet/wallet.(*Wallet).walletLocker(0xc0000003c0)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:1418 +0x228
+created by github.com/btcsuite/btcwallet/wallet.(*Wallet).Start in goroutine 5
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:198 +0x1bc
+
+goroutine 21 [select (leaked)]:
+github.com/btcsuite/btcwallet/wallet.(*Wallet).walletLocker(0xc000000500)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:1418 +0x228
+created by github.com/btcsuite/btcwallet/wallet.(*Wallet).Start in goroutine 4
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:198 +0x1bc
+
+FAIL	github.com/lightningnetwork/lnd/keychain	6.274s
+FAIL

@@ -1,0 +1,277 @@
+LEAK DETECTED: goroutine leak detected:
+goroutine 1 [running]:
+runtime/pprof.writeGoroutineStacks({0x103737ba0, 0xc0016e24b0})
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:820 +0x74
+runtime/pprof.writeGoroutineLeak({0x103737ba0, 0xc0016e24b0}, 0x2)
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:807 +0x98
+runtime/pprof.(*Profile).WriteTo(0x1037fd120, {0x103737ba0, 0xc0016e24b0}, 0x2)
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:409 +0x138
+github.com/lightningnetwork/lnd/lntest/leakcheck.Check()
+	/Users/head/code/lnd/lntest/leakcheck/leakcheck.go:32 +0x94
+github.com/lightningnetwork/lnd/lnwallet/btcwallet.TestMain(0xc0000ec780)
+	/Users/head/code/lnd/lnwallet/btcwallet/leak_test.go:18 +0x34
+main.main()
+	_testmain.go:62 +0x108
+
+goroutine 62 [chan receive (leaked)]:
+github.com/btcsuite/btcd/integration/rpctest.(*memWallet).chainSyncer(0xc000192900)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/integration/rpctest/memwallet.go:230 +0x60
+created by github.com/btcsuite/btcd/integration/rpctest.(*memWallet).Start in goroutine 56
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/integration/rpctest/memwallet.go:162 +0x84
+
+goroutine 198 [chan receive]:
+github.com/btcsuite/btcd/rpcclient.ReceiveFuture(...)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:967
+github.com/btcsuite/btcd/rpcclient.FutureGetBlockHeaderResult.Receive(0xc001324380)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/chain.go:592 +0x3c
+github.com/btcsuite/btcd/rpcclient.(*Client).GetBlockHeader(0xc000212680, 0xc00101b840)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/chain.go:639 +0x38
+github.com/btcsuite/btcwallet/wallet.(*Wallet).recovery(0xc001188140, {0x103747d60, 0xc001118f60}, 0xc0011a31c0)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:766 +0x724
+github.com/btcsuite/btcwallet/wallet.(*Wallet).syncWithChain(0xc001188140, 0x0)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:471 +0x35c
+github.com/btcsuite/btcwallet/wallet.(*Wallet).handleChainNotifications.func2(...)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/chainntfns.go:100
+github.com/btcsuite/btcwallet/wallet.(*Wallet).handleChainNotifications(0xc001188140)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/chainntfns.go:153 +0x10c8
+created by github.com/btcsuite/btcwallet/wallet.(*Wallet).SynchronizeRPC in goroutine 56
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:241 +0x228
+
+goroutine 197 [select]:
+github.com/btcsuite/btcwallet/chain.(*RPCClient).handler(0xc001118f60)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/chain/btcd.go:518 +0x2e8
+created by github.com/btcsuite/btcwallet/chain.(*RPCClient).Start in goroutine 56
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/chain/btcd.go:232 +0x1c0
+
+goroutine 199 [select]:
+github.com/btcsuite/btcwallet/wallet.(*Wallet).rescanBatchHandler(0xc001188140)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/rescan.go:116 +0x14c
+created by github.com/btcsuite/btcwallet/wallet.(*Wallet).SynchronizeRPC in goroutine 56
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:242 +0x288
+
+goroutine 3062 [select]:
+github.com/btcsuite/btcwallet/wallet.(*Wallet).rescanRPCHandler(0xc000000f00)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/rescan.go:249 +0x118
+created by github.com/btcsuite/btcwallet/wallet.(*Wallet).SynchronizeRPC in goroutine 2288
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:244 +0x348
+
+goroutine 200 [select]:
+github.com/btcsuite/btcwallet/wallet.(*Wallet).rescanProgressHandler(0xc001188140)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/rescan.go:211 +0xd4
+created by github.com/btcsuite/btcwallet/wallet.(*Wallet).SynchronizeRPC in goroutine 56
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:243 +0x2e8
+
+goroutine 201 [select]:
+github.com/btcsuite/btcwallet/wallet.(*Wallet).rescanRPCHandler(0xc001188140)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/rescan.go:249 +0x118
+created by github.com/btcsuite/btcwallet/wallet.(*Wallet).SynchronizeRPC in goroutine 56
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:244 +0x348
+
+goroutine 3058 [select]:
+github.com/btcsuite/btcwallet/chain.(*RPCClient).handler(0xc0011e42a0)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/chain/btcd.go:518 +0x2e8
+created by github.com/btcsuite/btcwallet/chain.(*RPCClient).Start in goroutine 2288
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/chain/btcd.go:232 +0x1c0
+
+goroutine 2015 [select]:
+github.com/btcsuite/btcwallet/wallet.(*Wallet).walletLocker(0xc001188280)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:1418 +0x228
+created by github.com/btcsuite/btcwallet/wallet.(*Wallet).Start in goroutine 1553
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:198 +0x1bc
+
+goroutine 39 [select]:
+github.com/btcsuite/btcwallet/wallet.(*Wallet).walletLocker(0xc001188140)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:1418 +0x228
+created by github.com/btcsuite/btcwallet/wallet.(*Wallet).Start in goroutine 56
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:198 +0x1bc
+
+goroutine 1253 [chan receive (leaked)]:
+github.com/btcsuite/btcd/integration/rpctest.(*memWallet).chainSyncer(0xc0011c3dd0)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/integration/rpctest/memwallet.go:230 +0x60
+created by github.com/btcsuite/btcd/integration/rpctest.(*memWallet).Start in goroutine 2288
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/integration/rpctest/memwallet.go:162 +0x84
+
+goroutine 2014 [select]:
+github.com/btcsuite/btcwallet/wallet.(*Wallet).txCreator(0xc001188280)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:1238 +0xb8
+created by github.com/btcsuite/btcwallet/wallet.(*Wallet).Start in goroutine 1553
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:197 +0x15c
+
+goroutine 804 [sleep]:
+time.Sleep(0x12a05f200)
+	/Users/head/sdk/go1.26rc1/src/runtime/time.go:363 +0x150
+github.com/btcsuite/btcd/rpcclient.(*Client).wsReconnectHandler(0xc000212680)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:726 +0x108
+created by github.com/btcsuite/btcd/rpcclient.(*Client).Connect in goroutine 56
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:1624 +0x3c0
+
+goroutine 2748 [select]:
+github.com/btcsuite/btcwallet/wallet.(*Wallet).txCreator(0xc000000f00)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:1238 +0xb8
+created by github.com/btcsuite/btcwallet/wallet.(*Wallet).Start in goroutine 2288
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:197 +0x15c
+
+goroutine 818 [chan receive (leaked)]:
+github.com/btcsuite/btcd/integration/rpctest.(*memWallet).chainSyncer(0xc0011cc990)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/integration/rpctest/memwallet.go:230 +0x60
+created by github.com/btcsuite/btcd/integration/rpctest.(*memWallet).Start in goroutine 78
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/integration/rpctest/memwallet.go:162 +0x84
+
+goroutine 2290 [select]:
+github.com/btcsuite/btcwallet/chain.(*RPCClient).handler(0xc00159f560)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/chain/btcd.go:518 +0x2e8
+created by github.com/btcsuite/btcwallet/chain.(*RPCClient).Start in goroutine 1553
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/chain/btcd.go:232 +0x1c0
+
+goroutine 2291 [chan receive]:
+github.com/btcsuite/btcd/rpcclient.ReceiveFuture(...)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:967
+github.com/btcsuite/btcd/rpcclient.FutureGetBlockHeaderResult.Receive(0xc00115e460)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/chain.go:592 +0x3c
+github.com/btcsuite/btcd/rpcclient.(*Client).GetBlockHeader(0xc00079d520, 0xc000ed6ec0)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/chain.go:639 +0x38
+github.com/btcsuite/btcwallet/wallet.(*Wallet).recovery(0xc001188280, {0x103747d60, 0xc00159f560}, 0xc0011ca940)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:766 +0x724
+github.com/btcsuite/btcwallet/wallet.(*Wallet).syncWithChain(0xc001188280, 0x0)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:471 +0x35c
+github.com/btcsuite/btcwallet/wallet.(*Wallet).handleChainNotifications.func2(...)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/chainntfns.go:100
+github.com/btcsuite/btcwallet/wallet.(*Wallet).handleChainNotifications(0xc001188280)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/chainntfns.go:153 +0x10c8
+created by github.com/btcsuite/btcwallet/wallet.(*Wallet).SynchronizeRPC in goroutine 1553
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:241 +0x228
+
+goroutine 3061 [select]:
+github.com/btcsuite/btcwallet/wallet.(*Wallet).rescanProgressHandler(0xc000000f00)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/rescan.go:211 +0xd4
+created by github.com/btcsuite/btcwallet/wallet.(*Wallet).SynchronizeRPC in goroutine 2288
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:243 +0x2e8
+
+goroutine 3060 [select]:
+github.com/btcsuite/btcwallet/wallet.(*Wallet).rescanBatchHandler(0xc000000f00)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/rescan.go:116 +0x14c
+created by github.com/btcsuite/btcwallet/wallet.(*Wallet).SynchronizeRPC in goroutine 2288
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:242 +0x288
+
+goroutine 3059 [select]:
+github.com/btcsuite/btcwallet/wallet.(*Wallet).handleChainNotifications(0xc000000f00)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/chainntfns.go:123 +0x1a0
+created by github.com/btcsuite/btcwallet/wallet.(*Wallet).SynchronizeRPC in goroutine 2288
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:241 +0x228
+
+goroutine 3057 [sleep]:
+time.Sleep(0x12a05f200)
+	/Users/head/sdk/go1.26rc1/src/runtime/time.go:363 +0x150
+github.com/btcsuite/btcd/rpcclient.(*Client).wsReconnectHandler(0xc001634000)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:726 +0x108
+created by github.com/btcsuite/btcd/rpcclient.(*Client).Connect in goroutine 2288
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:1624 +0x3c0
+
+goroutine 38 [select]:
+github.com/btcsuite/btcwallet/wallet.(*Wallet).txCreator(0xc001188140)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:1238 +0xb8
+created by github.com/btcsuite/btcwallet/wallet.(*Wallet).Start in goroutine 56
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:197 +0x15c
+
+goroutine 2292 [select]:
+github.com/btcsuite/btcwallet/wallet.(*Wallet).rescanBatchHandler(0xc001188280)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/rescan.go:116 +0x14c
+created by github.com/btcsuite/btcwallet/wallet.(*Wallet).SynchronizeRPC in goroutine 1553
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:242 +0x288
+
+goroutine 958 [chan receive (leaked)]:
+github.com/btcsuite/btcd/integration/rpctest.(*memWallet).chainSyncer(0xc0007ce7e0)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/integration/rpctest/memwallet.go:230 +0x60
+created by github.com/btcsuite/btcd/integration/rpctest.(*memWallet).Start in goroutine 1553
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/integration/rpctest/memwallet.go:162 +0x84
+
+goroutine 954 [sleep]:
+time.Sleep(0x12a05f200)
+	/Users/head/sdk/go1.26rc1/src/runtime/time.go:363 +0x150
+github.com/btcsuite/btcd/rpcclient.(*Client).wsReconnectHandler(0xc000534000)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:726 +0x108
+created by github.com/btcsuite/btcd/rpcclient.(*Client).Connect in goroutine 78
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:1624 +0x3c0
+
+goroutine 950 [select]:
+github.com/btcsuite/btcwallet/wallet.(*Wallet).walletLocker(0xc000000500)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:1418 +0x228
+created by github.com/btcsuite/btcwallet/wallet.(*Wallet).Start in goroutine 78
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:198 +0x1bc
+
+goroutine 949 [select]:
+github.com/btcsuite/btcwallet/wallet.(*Wallet).txCreator(0xc000000500)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:1238 +0xb8
+created by github.com/btcsuite/btcwallet/wallet.(*Wallet).Start in goroutine 78
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:197 +0x15c
+
+goroutine 208 [select]:
+github.com/btcsuite/btcwallet/wallet.(*Wallet).rescanRPCHandler(0xc000000500)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/rescan.go:249 +0x118
+created by github.com/btcsuite/btcwallet/wallet.(*Wallet).SynchronizeRPC in goroutine 78
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:244 +0x348
+
+goroutine 207 [select]:
+github.com/btcsuite/btcwallet/wallet.(*Wallet).rescanProgressHandler(0xc000000500)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/rescan.go:211 +0xd4
+created by github.com/btcsuite/btcwallet/wallet.(*Wallet).SynchronizeRPC in goroutine 78
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:243 +0x2e8
+
+goroutine 206 [select]:
+github.com/btcsuite/btcwallet/wallet.(*Wallet).rescanBatchHandler(0xc000000500)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/rescan.go:116 +0x14c
+created by github.com/btcsuite/btcwallet/wallet.(*Wallet).SynchronizeRPC in goroutine 78
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:242 +0x288
+
+goroutine 205 [chan receive]:
+github.com/btcsuite/btcd/rpcclient.ReceiveFuture(...)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:967
+github.com/btcsuite/btcd/rpcclient.FutureGetBlockHeaderResult.Receive(0xc0000b1ab0)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/chain.go:592 +0x3c
+github.com/btcsuite/btcd/rpcclient.(*Client).GetBlockHeader(0xc000534000, 0xc000f281e0)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/chain.go:639 +0x38
+github.com/btcsuite/btcwallet/wallet.(*Wallet).recovery(0xc000000500, {0x103747d60, 0xc000740240}, 0xc00127c800)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:766 +0x724
+github.com/btcsuite/btcwallet/wallet.(*Wallet).syncWithChain(0xc000000500, 0x0)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:471 +0x35c
+github.com/btcsuite/btcwallet/wallet.(*Wallet).handleChainNotifications.func2(...)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/chainntfns.go:100
+github.com/btcsuite/btcwallet/wallet.(*Wallet).handleChainNotifications(0xc000000500)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/chainntfns.go:153 +0x10c8
+created by github.com/btcsuite/btcwallet/wallet.(*Wallet).SynchronizeRPC in goroutine 78
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:241 +0x228
+
+goroutine 204 [select]:
+github.com/btcsuite/btcwallet/chain.(*RPCClient).handler(0xc000740240)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/chain/btcd.go:518 +0x2e8
+created by github.com/btcsuite/btcwallet/chain.(*RPCClient).Start in goroutine 78
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/chain/btcd.go:232 +0x1c0
+
+goroutine 2294 [select]:
+github.com/btcsuite/btcwallet/wallet.(*Wallet).rescanRPCHandler(0xc001188280)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/rescan.go:249 +0x118
+created by github.com/btcsuite/btcwallet/wallet.(*Wallet).SynchronizeRPC in goroutine 1553
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:244 +0x348
+
+goroutine 2293 [select]:
+github.com/btcsuite/btcwallet/wallet.(*Wallet).rescanProgressHandler(0xc001188280)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/rescan.go:211 +0xd4
+created by github.com/btcsuite/btcwallet/wallet.(*Wallet).SynchronizeRPC in goroutine 1553
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:243 +0x2e8
+
+goroutine 2289 [sleep]:
+time.Sleep(0x12a05f200)
+	/Users/head/sdk/go1.26rc1/src/runtime/time.go:363 +0x150
+github.com/btcsuite/btcd/rpcclient.(*Client).wsReconnectHandler(0xc00079d520)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:726 +0x108
+created by github.com/btcsuite/btcd/rpcclient.(*Client).Connect in goroutine 1553
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:1624 +0x3c0
+
+goroutine 2749 [select]:
+github.com/btcsuite/btcwallet/wallet.(*Wallet).walletLocker(0xc000000f00)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:1418 +0x228
+created by github.com/btcsuite/btcwallet/wallet.(*Wallet).Start in goroutine 2288
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/wallet/wallet.go:198 +0x1bc
+
+FAIL	github.com/lightningnetwork/lnd/lnwallet/btcwallet	5.335s
+FAIL

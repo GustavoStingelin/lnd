@@ -1,0 +1,39 @@
+LEAK DETECTED: goroutine leak detected:
+goroutine 1 [running]:
+runtime/pprof.writeGoroutineStacks({0x102d48340, 0xc0002ac360})
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:820 +0x74
+runtime/pprof.writeGoroutineLeak({0x102d48340, 0xc0002ac360}, 0x2)
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:807 +0x98
+runtime/pprof.(*Profile).WriteTo(0x102dcdae0, {0x102d48340, 0xc0002ac360}, 0x2)
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:409 +0x138
+github.com/lightningnetwork/lnd/lntest/leakcheck.Check()
+	/Users/head/code/lnd/lntest/leakcheck/leakcheck.go:32 +0x94
+github.com/lightningnetwork/lnd/chainio.TestMain(0xc000152fa0)
+	/Users/head/code/lnd/chainio/leak_test.go:18 +0x34
+main.main()
+	_testmain.go:80 +0x108
+
+goroutine 5 [sleep]:
+time.Sleep(0x3b9aca00)
+	/Users/head/sdk/go1.26rc1/src/runtime/time.go:363 +0x150
+github.com/lightningnetwork/lnd/chainio.TestNotifyAndWaitOnConsumerTimeout.func1({0xc000022098?, 0x2?, 0x1?})
+	/Users/head/code/lnd/chainio/dispatcher_test.go:85 +0x38
+github.com/stretchr/testify/mock.(*Mock).MethodCalled(0xc000022050, {0x102a314b7, 0xc}, {0xc000200540, 0x1, 0x1})
+	/Users/head/go/pkg/mod/github.com/stretchr/testify@v1.10.0/mock/mock.go:570 +0xd94
+github.com/stretchr/testify/mock.(*Mock).Called(0xc000022050, {0xc000200540, 0x1, 0x1})
+	/Users/head/go/pkg/mod/github.com/stretchr/testify@v1.10.0/mock/mock.go:481 +0x130
+github.com/lightningnetwork/lnd/chainio.(*MockConsumer).ProcessBlock(0xc000022050, {0x102d49290, 0xc0000220a0})
+	/Users/head/code/lnd/chainio/mocks.go:25 +0xac
+github.com/lightningnetwork/lnd/chainio.notifyAndWait.func1()
+	/Users/head/code/lnd/chainio/dispatcher.go:343 +0x5c
+created by github.com/lightningnetwork/lnd/chainio.notifyAndWait in goroutine 39
+	/Users/head/code/lnd/chainio/dispatcher.go:342 +0x1ec
+
+goroutine 22 [select (leaked)]:
+github.com/lightningnetwork/lnd/chainio.(*BlockbeatDispatcher).dispatchBlocks(0xc0001386e0, 0xc000148e80)
+	/Users/head/code/lnd/chainio/dispatcher.go:161 +0x158
+created by github.com/lightningnetwork/lnd/chainio.(*BlockbeatDispatcher).Start in goroutine 42
+	/Users/head/code/lnd/chainio/dispatcher.go:122 +0x40c
+
+FAIL	github.com/lightningnetwork/lnd/chainio	0.308s
+FAIL

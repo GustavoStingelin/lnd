@@ -1,0 +1,641 @@
+LEAK DETECTED: goroutine leak detected:
+goroutine 1 [running]:
+runtime/pprof.writeGoroutineStacks({0x103d8b5c0, 0xc0023db320})
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:820 +0x74
+runtime/pprof.writeGoroutineLeak({0x103d8b5c0, 0xc0023db320}, 0x2)
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:807 +0x98
+runtime/pprof.(*Profile).WriteTo(0x103edb820, {0x103d8b5c0, 0xc0023db320}, 0x2)
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:409 +0x138
+github.com/lightningnetwork/lnd/lntest/leakcheck.Check()
+	/Users/head/code/lnd/lntest/leakcheck/leakcheck.go:32 +0x94
+github.com/lightningnetwork/lnd/funding.TestMain(0xc000118a00)
+	/Users/head/code/lnd/funding/leak_test.go:18 +0x34
+main.main()
+	_testmain.go:110 +0x108
+
+goroutine 141 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000f80008)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 44
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 177 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000e1c008)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 48
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 413 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000889408)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 300
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 30 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000233008)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 29
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 50 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000512008)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 28
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 32 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000233c08)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 29
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 480 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc00122e408)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 454
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 52 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000512408)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 28
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 54 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000512808)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 37
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 266 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc0007ff408)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 95
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 79 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000c42c08)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 84
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 503 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc00115e008)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 10
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 255 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc00094f408)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 81
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 555 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000e3dc08)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 552
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 427 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000e9dc08)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 301
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 251 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000b65008)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 83
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 458 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000e3d408)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 299
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 492 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000df5408)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 296
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 408 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000888c08)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 97
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 161 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc00094e008)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 41
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 564 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc0020fac08)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 297
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 66 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc0008c2008)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 40
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 489 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000df5008)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 9
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 277 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000e1c808)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 290
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 96 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc0007fe008)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 46
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 209 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000bda008)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 43
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 225 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000b64008)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 38
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 401 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000c43008)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 84
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 146 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000d7e008)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 42
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 100 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000e9c008)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 45
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 529 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc001d6a008)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 8
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 115 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000c42008)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 47
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 11 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000dfa008)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 145
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 211 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000bda408)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 41
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 68 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000e9c408)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 37
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 214 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000bda808)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 47
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 163 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc00094e408)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 40
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 227 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000d7e408)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 48
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 239 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc00094ec08)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 238
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 117 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000f80408)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 43
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 366 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000fbcc08)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 86
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 102 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000b64408)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 44
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 406 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000888808)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 10
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 194 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc0008c2408)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 38
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 143 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc0007fe408)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 46
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 179 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000c42408)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 42
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 368 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000fbd008)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 86
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 164 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc00094e808)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 45
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 148 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000e1c408)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 145
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 71 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000e9c808)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 70
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 181 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000c42808)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 93
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 450 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000e3c008)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 86
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 294 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000513408)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 39
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 264 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc0007ff008)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 261
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 518 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000fbdc08)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 300
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 346 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000d7e808)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 25
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 336 [select]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000dfb408)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 90
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 308 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000b64808)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 307
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 272 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc0024c6008)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 298
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 456 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000e3d008)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 299
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 153 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000f80808)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 95
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 425 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000e9d808)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 301
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 310 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000b64c08)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 307
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 417 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc00094fc08)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 81
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 553 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000e3d808)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 552
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 183 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000dfa408)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 93
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 125 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000512c08)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 70
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 222 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000d7f008)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 221
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 224 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000d7f408)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 221
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 279 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000e1cc08)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 290
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 282 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000e1d008)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 281
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 284 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000e1d408)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 281
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 287 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000e1d808)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 286
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 305 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000e1dc08)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 286
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 465 [select]:
+github.com/lightningnetwork/lnd/funding.(*Manager).reservationCoordinator(0xc001fff860)
+	/Users/head/code/lnd/funding/manager.go:1044 +0x1d4
+created by github.com/lightningnetwork/lnd/funding.(*Manager).start in goroutine 90
+	/Users/head/code/lnd/funding/manager.go:788 +0x578
+
+goroutine 321 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc00094f008)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 238
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 262 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc0007fec08)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 261
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 313 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000b65408)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 312
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 315 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000b65808)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 312
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 186 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000bdb008)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 89
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 339 [select]:
+github.com/lightningnetwork/lnd/funding.(*Manager).reservationCoordinator(0xc000c53d40)
+	/Users/head/code/lnd/funding/manager.go:1044 +0x1d4
+created by github.com/lightningnetwork/lnd/funding.(*Manager).start in goroutine 89
+	/Users/head/code/lnd/funding/manager.go:788 +0x578
+
+goroutine 188 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000bdb408)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 89
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 190 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000bdb808)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 89
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 192 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000bdbc08)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 89
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 338 [select]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000dfa808)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 89
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 340 [select]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000dfac08)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 89
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 341 [select]:
+github.com/lightningnetwork/lnd/funding.(*Manager).reservationCoordinator(0xc000d46820)
+	/Users/head/code/lnd/funding/manager.go:1044 +0x1d4
+created by github.com/lightningnetwork/lnd/funding.(*Manager).start in goroutine 89
+	/Users/head/code/lnd/funding/manager.go:788 +0x578
+
+goroutine 330 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc00094f808)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 39
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 344 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000dfbc08)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 25
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 566 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc0020fb008)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 297
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 302 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000513808)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 85
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 304 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000513c08)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 85
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 253 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000b65c08)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 83
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 436 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc0008c2c08)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 90
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 335 [select]:
+github.com/lightningnetwork/lnd/funding.(*Manager).reservationCoordinator(0xc001ffeea0)
+	/Users/head/code/lnd/funding/manager.go:1044 +0x1d4
+created by github.com/lightningnetwork/lnd/funding.(*Manager).start in goroutine 90
+	/Users/head/code/lnd/funding/manager.go:788 +0x578
+
+goroutine 438 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc0008c3008)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 90
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 334 [select]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000dfb008)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 90
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 452 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000e3c408)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 86
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 423 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000e9d408)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 8
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 410 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000889008)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 97
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 487 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000df4c08)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 9
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 546 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc00122e808)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 454
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 531 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc001d6a408)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 296
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+goroutine 447 [select (leaked)]:
+github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).requestHandler(0xc000ed9008)
+	/Users/head/code/lnd/lnwallet/wallet.go:661 +0x100
+created by github.com/lightningnetwork/lnd/lnwallet.(*LightningWallet).Startup in goroutine 298
+	/Users/head/code/lnd/lnwallet/wallet.go:503 +0x148
+
+FAIL	github.com/lightningnetwork/lnd/funding	13.122s
+FAIL

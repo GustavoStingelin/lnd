@@ -1,0 +1,1127 @@
+LEAK DETECTED: goroutine leak detected:
+goroutine 1 [running]:
+runtime/pprof.writeGoroutineStacks({0x1038d9e20, 0xc000af4000})
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:820 +0x74
+runtime/pprof.writeGoroutineLeak({0x1038d9e20, 0xc000af4000}, 0x2)
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:807 +0x98
+runtime/pprof.(*Profile).WriteTo(0x1039f0a80, {0x1038d9e20, 0xc000af4000}, 0x2)
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:409 +0x138
+github.com/lightningnetwork/lnd/lntest/leakcheck.Check()
+	/Users/head/code/lnd/lntest/leakcheck/leakcheck.go:32 +0x94
+github.com/lightningnetwork/lnd/discovery.TestMain(0xc00040e5a0)
+	/Users/head/code/lnd/discovery/leak_test.go:18 +0x34
+main.main()
+	_testmain.go:214 +0x108
+
+goroutine 1565 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0001cc640)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1603
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1564 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000d2ec00, {0x1038eb910, 0xc0005e7c20}, 0xc0005feee0)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000d2ec00, {0x1038eb910, 0xc0005e7c20})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1408 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000aec900, {0x1038eb910, 0xc000ac9630}, 0xc001006ee0)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000aec900, {0x1038eb910, 0xc000ac9630})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1148 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000aec180, {0x1038eb910, 0xc000ac82d0}, 0xc000ab32d0)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000aec180, {0x1038eb910, 0xc000ac82d0})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1452 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0001b6b20)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1451
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1598 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000882480, {0x1038eb910, 0xc00088f270}, 0xc00088d500)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000882480, {0x1038eb910, 0xc00088f270})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1526 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0001c5ee0)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1496
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1003 [select (leaked)]:
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000376480, {0x1038eb910, 0xc000ca4d70})
+	/Users/head/code/lnd/discovery/syncer.go:760 +0x160
+created by github.com/lightningnetwork/lnd/discovery.(*SyncManager).syncerHandler.(*GossipSyncer).Start.func2 in goroutine 243
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 797 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc000136920)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 560
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1587 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000882000, {0x1038eb910, 0xc0008a0eb0}, 0xc00017c700)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000882000, {0x1038eb910, 0xc0008a0eb0})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1249 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc000580ce0)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1216
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1022 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc000137140)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1021
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1578 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc00013be00)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1607
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 791 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc000425060)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 555
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1362 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000377200, {0x1038eb910, 0xc000a46370}, 0xc000a5aaf0)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000377200, {0x1038eb910, 0xc000a46370})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1544 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc00047da80)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1572
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1524 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0001c5aa0)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1523
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1645 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0001db7e0)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1652
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1390 [select (leaked)]:
+github.com/lightningnetwork/lnd/discovery.(*reliableSender).peerHandler(0xc000a60c00, {0x1038eb910, 0xc0007885f0}, {0xc00089e4d0?, 0xc00089e540?}, {0x2, 0xbe, 0x39, 0xa7, 0x47, ...})
+	/Users/head/code/lnd/discovery/reliable_sender.go:306 +0x10c4
+created by github.com/lightningnetwork/lnd/discovery.(*reliableSender).spawnPeerHandler in goroutine 90
+	/Users/head/code/lnd/discovery/reliable_sender.go:164 +0x27c
+
+goroutine 1308 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000898180, {0x1038eb910, 0xc000b31450}, 0xc00089c2a0)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000898180, {0x1038eb910, 0xc000b31450})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1603 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000c2ef00, {0x1038eb910, 0xc000a4a5f0}, 0xc000a4c8c0)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000c2ef00, {0x1038eb910, 0xc000a4a5f0})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 722 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0001b68c0)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 708
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1167 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc000581ac0)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1086
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1545 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc00047db80)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1576
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 708 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc0000f8300, {0x1038eb910, 0xc000ca40f0}, 0xc000e1d0a0)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc0000f8300, {0x1038eb910, 0xc000ca40f0})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1198 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000376900, {0x1038eb910, 0xc000daf310}, 0xc000238150)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000376900, {0x1038eb910, 0xc000daf310})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueTimestampRange.(*GossipSyncer).Start.func1 in goroutine 105
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 750 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc0000f8c00, {0x1038eb910, 0xc000c20a50}, 0xc000a31ab0)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc0000f8c00, {0x1038eb910, 0xc000c20a50})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1086 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc0000f8900, {0x1038eb910, 0xc000789bd0}, 0xc000dfe150)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc0000f8900, {0x1038eb910, 0xc000789bd0})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1592 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0001ce3e0)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1617
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1118 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc000581260)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1137
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1577 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc00013b680)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1564
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1496 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000898600, {0x1038eb910, 0xc00126cb90}, 0xc000b8c310)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000898600, {0x1038eb910, 0xc00126cb90})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1554 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000376f00, {0x1038eb910, 0xc00048d450}, 0xc000b0f3b0)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000376f00, {0x1038eb910, 0xc00048d450})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 210 [select (leaked)]:
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).channelGraphSyncer(0xc000d2e000, {0x1038eb910, 0xc000d1a0a0})
+	/Users/head/code/lnd/discovery/syncer.go:701 +0x510
+created by github.com/lightningnetwork/lnd/discovery.(*SyncManager).syncerHandler.(*GossipSyncer).Start.func2 in goroutine 243
+	/Users/head/code/lnd/discovery/syncer.go:466 +0x1e8
+
+goroutine 211 [select (leaked)]:
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).replyHandler(0xc000d2e000, {0x1038eb910, 0xc000d1a0a0})
+	/Users/head/code/lnd/discovery/syncer.go:729 +0x160
+created by github.com/lightningnetwork/lnd/discovery.(*SyncManager).syncerHandler.(*GossipSyncer).Start.func2 in goroutine 243
+	/Users/head/code/lnd/discovery/syncer.go:470 +0x2b4
+
+goroutine 212 [select (leaked)]:
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000d2e000, {0x1038eb910, 0xc000d1a0a0})
+	/Users/head/code/lnd/discovery/syncer.go:760 +0x160
+created by github.com/lightningnetwork/lnd/discovery.(*SyncManager).syncerHandler.(*GossipSyncer).Start.func2 in goroutine 243
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1551 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0001b99e0)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1591
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1139 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0001b2fc0)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1174
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1652 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000882600, {0x1038eb910, 0xc000892870}, 0xc000894770)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000882600, {0x1038eb910, 0xc000892870})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1511 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc0000f9b00, {0x1038eb910, 0xc000a463c0}, 0xc00052d730)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc0000f9b00, {0x1038eb910, 0xc000a463c0})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1492 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc000136f80)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1541
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 999 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000376300, {0x1038eb910, 0xc000a8b6d0}, 0xc000a30b60)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000376300, {0x1038eb910, 0xc000a8b6d0})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1576 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000aed200, {0x1038eb910, 0xc0007d17c0}, 0xc0007d51f0)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000aed200, {0x1038eb910, 0xc0007d17c0})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1560 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000377800, {0x1038eb910, 0xc0005acaf0}, 0xc0005af030)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000377800, {0x1038eb910, 0xc0005acaf0})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1599 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0001cef60)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1598
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1373 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc00047cd20)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1372
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1533 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000376d80, {0x1038eb910, 0xc00048cf00}, 0xc000b0e3f0)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000376d80, {0x1038eb910, 0xc00048cf00})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1541 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000c2e780, {0x1038eb910, 0xc00082af00}, 0xc000ab2460)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000c2e780, {0x1038eb910, 0xc00082af00})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1591 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000882300, {0x1038eb910, 0xc0008897c0}, 0xc00088c2a0)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000882300, {0x1038eb910, 0xc0008897c0})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 943 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000d2e780, {0x1038eb910, 0xc000c213b0}, 0xc000deed90)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000d2e780, {0x1038eb910, 0xc000c213b0})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1021 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000d2e900, {0x1038eb910, 0xc000d1a910}, 0xc001127570)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000d2e900, {0x1038eb910, 0xc000d1a910})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1108 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc0000f8480, {0x1038eb910, 0xc000b30d70}, 0xc000a31110)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc0000f8480, {0x1038eb910, 0xc000b30d70})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1235 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000376a80, {0x1038eb910, 0xc000daf4f0}, 0xc000285730)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000376a80, {0x1038eb910, 0xc000daf4f0})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1149 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0001c48e0)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1148
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1523 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000376780, {0x1038eb910, 0xc000d1b590}, 0xc000dee000)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000376780, {0x1038eb910, 0xc000d1b590})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1002 [select (leaked)]:
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).replyHandler(0xc000376480, {0x1038eb910, 0xc000ca4d70})
+	/Users/head/code/lnd/discovery/syncer.go:729 +0x160
+created by github.com/lightningnetwork/lnd/discovery.(*SyncManager).syncerHandler.(*GossipSyncer).Start.func2 in goroutine 243
+	/Users/head/code/lnd/discovery/syncer.go:470 +0x2b4
+
+goroutine 640 [select (leaked)]:
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).channelGraphSyncer(0xc0000f8180, {0x1038eb910, 0xc000ca4190})
+	/Users/head/code/lnd/discovery/syncer.go:701 +0x510
+created by github.com/lightningnetwork/lnd/discovery.(*SyncManager).syncerHandler.(*GossipSyncer).Start.func2 in goroutine 243
+	/Users/head/code/lnd/discovery/syncer.go:466 +0x1e8
+
+goroutine 753 [select (leaked)]:
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).replyHandler(0xc0000f8180, {0x1038eb910, 0xc000ca4190})
+	/Users/head/code/lnd/discovery/syncer.go:729 +0x160
+created by github.com/lightningnetwork/lnd/discovery.(*SyncManager).syncerHandler.(*GossipSyncer).Start.func2 in goroutine 243
+	/Users/head/code/lnd/discovery/syncer.go:470 +0x2b4
+
+goroutine 1372 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000377380, {0x1038eb910, 0xc000a47900}, 0xc000f38690)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000377380, {0x1038eb910, 0xc000a47900})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1653 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0001cf820)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1665
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1451 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000aec480, {0x1038eb910, 0xc0007a31d0}, 0xc000c7c2a0)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000aec480, {0x1038eb910, 0xc0007a31d0})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1550 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0001b9840)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1587
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1534 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0001c8dc0)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1456
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1428 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000377680, {0x1038eb910, 0xc00082a5f0}, 0xc000828e00)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000377680, {0x1038eb910, 0xc00082a5f0})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1199 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0000d5a60)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1198
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1572 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000aecf00, {0x1038eb910, 0xc0007a3a90}, 0xc000c7d8f0)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000aecf00, {0x1038eb910, 0xc0007a3a90})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1391 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0001b1180)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1428
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1519 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc000425800)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1560
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1445 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0001b1360)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1444
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1456 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000aecd80, {0x1038eb910, 0xc0007a3450}, 0xc000c7d030)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000aecd80, {0x1038eb910, 0xc0007a3450})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1556 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0001c9560)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1549
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1444 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000898480, {0x1038eb910, 0xc0008d0000}, 0xc0008b9260)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000898480, {0x1038eb910, 0xc0008d0000})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1518 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc0000f9c80, {0x1038eb910, 0xc0008a0870}, 0xc000ad7880)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc0000f9c80, {0x1038eb910, 0xc0008a0870})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1506 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc0000f9080, {0x1038eb910, 0xc000daf8b0}, 0xc000c0bce0)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc0000f9080, {0x1038eb910, 0xc000daf8b0})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 888 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc000580360)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 909
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1263 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0001c4720)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1506
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 944 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0001b35c0)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 943
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1476 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000c2e480, {0x1038eb910, 0xc00082a640}, 0xc000cb5ab0)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000c2e480, {0x1038eb910, 0xc00082a640})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 650 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc000424cc0)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 750
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 555 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000d2e480, {0x1038eb910, 0xc000c20be0}, 0xc000c0af50)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000d2e480, {0x1038eb910, 0xc000c20be0})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1092 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0001372c0)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1108
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1593 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0001ceb20)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1615
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1457 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0001c5760)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1408
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1309 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0001b01e0)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1308
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1254 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc000581420)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1279
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1001 [select (leaked)]:
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).channelGraphSyncer(0xc000376480, {0x1038eb910, 0xc000ca4d70})
+	/Users/head/code/lnd/discovery/syncer.go:701 +0x510
+created by github.com/lightningnetwork/lnd/discovery.(*SyncManager).syncerHandler.(*GossipSyncer).Start.func2 in goroutine 243
+	/Users/head/code/lnd/discovery/syncer.go:466 +0x1e8
+
+goroutine 1488 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc00047cb20)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1511
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1137 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000c2e000, {0x1038eb910, 0xc000e21c70}, 0xc00016f2d0)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000c2e000, {0x1038eb910, 0xc000e21c70})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 754 [select (leaked)]:
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc0000f8180, {0x1038eb910, 0xc000ca4190})
+	/Users/head/code/lnd/discovery/syncer.go:760 +0x160
+created by github.com/lightningnetwork/lnd/discovery.(*SyncManager).syncerHandler.(*GossipSyncer).Start.func2 in goroutine 243
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1245 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000377080, {0x1038eb910, 0xc000a8b450}, 0xc000ad6310)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000377080, {0x1038eb910, 0xc000a8b450})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1555 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0001c9140)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1554
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 560 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000d2e600, {0x1038eb910, 0xc000e209b0}, 0xc0002383f0)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000d2e600, {0x1038eb910, 0xc000e209b0})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueTimestampRangeConcurrent.(*GossipSyncer).Start.func3 in goroutine 107
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 966 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc000425220)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 999
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1447 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0000d4e40)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1518
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 909 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000d2e300, {0x1038eb910, 0xc000d1a410}, 0xc00052c5b0)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000d2e300, {0x1038eb910, 0xc000d1a410})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1206 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0004256a0)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1220
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1549 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000c2ea80, {0x1038eb910, 0xc000171180}, 0xc0001742a0)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000c2ea80, {0x1038eb910, 0xc000171180})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1514 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0004241c0)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1533
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1220 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc0000f8780, {0x1038eb910, 0xc0005c6e10}, 0xc000dfeee0)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc0000f8780, {0x1038eb910, 0xc0005c6e10})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1174 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000d2ed80, {0x1038eb910, 0xc000d1bbd0}, 0xc000cb78f0)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000d2ed80, {0x1038eb910, 0xc000d1bbd0})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1210 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc000425ce0)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1235
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1617 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000d2f080, {0x1038eb910, 0xc000ae1630}, 0xc000ae32d0)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000d2f080, {0x1038eb910, 0xc000ae1630})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1216 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000d2f200, {0x1038eb910, 0xc000ca5a40}, 0xc000ba3030)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000d2f200, {0x1038eb910, 0xc000ca5a40})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1140 [select (leaked)]:
+github.com/lightningnetwork/lnd/discovery.(*reliableSender).peerHandler(0xc00058bd80, {0x1038eb910, 0xc0007885a0}, {0xc000db1880?, 0xc000db18f0?}, {0x3, 0x17, 0x2e, 0x7, 0xd8, ...})
+	/Users/head/code/lnd/discovery/reliable_sender.go:306 +0x10c4
+created by github.com/lightningnetwork/lnd/discovery.(*reliableSender).spawnPeerHandler in goroutine 89
+	/Users/head/code/lnd/discovery/reliable_sender.go:164 +0x27c
+
+goroutine 1056 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc000136c20)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1476
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1327 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0001bcc20)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1362
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1579 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0001d6060)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1611
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1246 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc00013b840)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1245
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1262 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0005810a0)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1261
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1482 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc00047c880)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1438
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1261 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000376600, {0x1038eb910, 0xc0008d1400}, 0xc000799c70)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000376600, {0x1038eb910, 0xc0008d1400})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1279 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000d2f800, {0x1038eb910, 0xc00003fcc0}, 0xc00113c540)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000d2f800, {0x1038eb910, 0xc00003fcc0})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1438 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc0000f8d80, {0x1038eb910, 0xc000ca57c0}, 0xc000dff5e0)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc0000f8d80, {0x1038eb910, 0xc000ca57c0})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1607 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000c2f200, {0x1038eb910, 0xc000a4b090}, 0xc000a4d8f0)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000c2f200, {0x1038eb910, 0xc000a4b090})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1611 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000c2f380, {0x1038eb910, 0xc000a4b9f0}, 0xc000a52310)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000c2f380, {0x1038eb910, 0xc000a4b9f0})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1594 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0001cecc0)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1644
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1615 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000c2f680, {0x1038eb910, 0xc000a72640}, 0xc000a533b0)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000c2f680, {0x1038eb910, 0xc000a72640})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1584 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000aed380, {0x1038eb910, 0xc000848370}, 0xc0008469a0)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000aed380, {0x1038eb910, 0xc000848370})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1635 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000c2f980, {0x1038eb910, 0xc000a73d60}, 0xc000a76af0)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000c2f980, {0x1038eb910, 0xc000a73d60})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1636 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0001d5b60)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1635
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1580 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0001d6200)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1640
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1640 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000c2fc80, {0x1038eb910, 0xc000b2cf50}, 0xc000a77d50)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000c2fc80, {0x1038eb910, 0xc000b2cf50})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1600 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0001cf0a0)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1584
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1665 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000b4a480, {0x1038eb910, 0xc000b68af0}, 0xc000b65b20)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000b4a480, {0x1038eb910, 0xc000b68af0})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1644 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000b4a180, {0x1038eb910, 0xc000b61130}, 0xc000b647e0)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000b4a180, {0x1038eb910, 0xc000b61130})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+goroutine 1618 [chan receive]:
+github.com/lightningnetwork/lnd/discovery.(*mockChannelGraphTimeSeries).UpdatesInHorizon.func1(0xc0001cd660)
+	/Users/head/code/lnd/discovery/syncer_test.go:100 +0xec
+iter.Pull2[...].func1()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:417 +0x190
+created by iter.Pull2[...] in goroutine 1669
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:387 +0x140
+
+goroutine 1669 [coroutine]:
+iter.Pull2[...].func2()
+	/Users/head/sdk/go1.26rc1/src/iter/iter.go:434 +0xb4
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).ApplyGossipFilter(0xc000b4a780, {0x1038eb910, 0xc000b86820}, 0xc000b8a150)
+	/Users/head/code/lnd/discovery/syncer.go:1487 +0x3ec
+github.com/lightningnetwork/lnd/discovery.(*GossipSyncer).processTimestampRangeQueue(0xc000b4a780, {0x1038eb910, 0xc000b86820})
+	/Users/head/code/lnd/discovery/syncer.go:765 +0x180
+created by github.com/lightningnetwork/lnd/discovery.TestGossipSyncerQueueInvariants.func1.(*GossipSyncer).Start.1 in goroutine 109
+	/Users/head/code/lnd/discovery/syncer.go:477 +0x380
+
+FAIL	github.com/lightningnetwork/lnd/discovery	12.620s
+FAIL

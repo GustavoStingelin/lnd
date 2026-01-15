@@ -1,0 +1,55 @@
+LEAK DETECTED: goroutine leak detected:
+goroutine 1 [running]:
+runtime/pprof.writeGoroutineStacks({0x103d81c80, 0xc0016880f0})
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:820 +0x74
+runtime/pprof.writeGoroutineLeak({0x103d81c80, 0xc0016880f0}, 0x2)
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:807 +0x98
+runtime/pprof.(*Profile).WriteTo(0x103e56620, {0x103d81c80, 0xc0016880f0}, 0x2)
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:409 +0x138
+github.com/lightningnetwork/lnd/lntest/leakcheck.Check()
+	/Users/head/code/lnd/lntest/leakcheck/leakcheck.go:32 +0x94
+github.com/lightningnetwork/lnd/lnwallet/test/btcd_test.TestMain(0xc0001fe6e0)
+	/Users/head/code/lnd/lnwallet/test/btcd/leak_test.go:18 +0x34
+main.main()
+	_testmain.go:48 +0x108
+
+goroutine 32 [chan receive (leaked)]:
+github.com/btcsuite/btcd/integration/rpctest.(*memWallet).chainSyncer(0xc00020c900)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/integration/rpctest/memwallet.go:230 +0x60
+created by github.com/btcsuite/btcd/integration/rpctest.(*memWallet).Start in goroutine 26
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/integration/rpctest/memwallet.go:162 +0x84
+
+goroutine 807 [select]:
+github.com/lightningnetwork/lnd/chainntnfs/btcdnotify.(*BtcdNotifier).notificationDispatcher(0xc0011080c0)
+	/Users/head/code/lnd/chainntnfs/btcdnotify/btcd.go:342 +0x1e8
+created by github.com/lightningnetwork/lnd/chainntnfs/btcdnotify.(*BtcdNotifier).startNotifier in goroutine 26
+	/Users/head/code/lnd/chainntnfs/btcdnotify/btcd.go:263 +0x594
+
+goroutine 920 [chan receive (leaked)]:
+github.com/btcsuite/btcd/integration/rpctest.(*memWallet).chainSyncer(0xc0022ccb40)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/integration/rpctest/memwallet.go:230 +0x60
+created by github.com/btcsuite/btcd/integration/rpctest.(*memWallet).Start in goroutine 966
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/integration/rpctest/memwallet.go:162 +0x84
+
+goroutine 801 [select]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 26
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 802 [select]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 26
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 806 [sleep]:
+time.Sleep(0x12a05f200)
+	/Users/head/sdk/go1.26rc1/src/runtime/time.go:363 +0x150
+github.com/btcsuite/btcd/rpcclient.(*Client).wsReconnectHandler(0xc000133ba0)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:726 +0x108
+created by github.com/btcsuite/btcd/rpcclient.(*Client).Connect in goroutine 26
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:1624 +0x3c0
+
+FAIL	github.com/lightningnetwork/lnd/lnwallet/test/btcd	39.150s
+FAIL

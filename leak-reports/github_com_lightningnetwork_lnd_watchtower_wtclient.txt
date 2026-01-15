@@ -1,0 +1,113 @@
+LEAK DETECTED: goroutine leak detected:
+goroutine 1 [running]:
+runtime/pprof.writeGoroutineStacks({0x10615abe0, 0xc001c7e7b0})
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:820 +0x74
+runtime/pprof.writeGoroutineLeak({0x10615abe0, 0xc001c7e7b0}, 0x2)
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:807 +0x98
+runtime/pprof.(*Profile).WriteTo(0x10621dda0, {0x10615abe0, 0xc001c7e7b0}, 0x2)
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:409 +0x138
+github.com/lightningnetwork/lnd/lntest/leakcheck.Check()
+	/Users/head/code/lnd/lntest/leakcheck/leakcheck.go:32 +0x94
+github.com/lightningnetwork/lnd/watchtower/wtclient.TestMain(0xc0000c60a0)
+	/Users/head/code/lnd/watchtower/wtclient/leak_test.go:18 +0x34
+main.main()
+	_testmain.go:64 +0x108
+
+goroutine 492 [select (leaked)]:
+github.com/btcsuite/btcd/connmgr.(*ConnManager).connHandler(0xc0007f05a0)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/connmgr/connmanager.go:246 +0x1bc
+created by github.com/btcsuite/btcd/connmgr.(*ConnManager).Start in goroutine 76
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/connmgr/connmanager.go:523 +0x12c
+
+goroutine 491 [select (leaked)]:
+github.com/lightningnetwork/lnd/watchtower/wtserver.(*Server).peerHandler(0xc0010452d0)
+	/Users/head/code/lnd/watchtower/wtserver/server.go:193 +0x148
+created by github.com/lightningnetwork/lnd/watchtower/wtclient_test.(*serverHarness).start.(*Server).Start.func1 in goroutine 76
+	/Users/head/code/lnd/watchtower/wtserver/server.go:134 +0xd8
+
+goroutine 656 [select (leaked)]:
+github.com/lightningnetwork/lnd/watchtower/wtserver.(*Server).peerHandler(0xc000e14070)
+	/Users/head/code/lnd/watchtower/wtserver/server.go:193 +0x148
+created by github.com/lightningnetwork/lnd/watchtower/wtclient_test.(*serverHarness).start.(*Server).Start.func1 in goroutine 79
+	/Users/head/code/lnd/watchtower/wtserver/server.go:134 +0xd8
+
+goroutine 973 [select (leaked)]:
+github.com/lightningnetwork/lnd/watchtower/wtserver.(*Server).peerHandler(0xc0000f5110)
+	/Users/head/code/lnd/watchtower/wtserver/server.go:193 +0x148
+created by github.com/lightningnetwork/lnd/watchtower/wtclient_test.(*serverHarness).start.(*Server).Start.func1 in goroutine 72
+	/Users/head/code/lnd/watchtower/wtserver/server.go:134 +0xd8
+
+goroutine 913 [select (leaked)]:
+github.com/btcsuite/btcd/connmgr.(*ConnManager).connHandler(0xc0011d0360)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/connmgr/connmanager.go:246 +0x1bc
+created by github.com/btcsuite/btcd/connmgr.(*ConnManager).Start in goroutine 79
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/connmgr/connmanager.go:523 +0x12c
+
+goroutine 815 [select (leaked)]:
+github.com/btcsuite/btcd/connmgr.(*ConnManager).connHandler(0xc00087ed80)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/connmgr/connmanager.go:246 +0x1bc
+created by github.com/btcsuite/btcd/connmgr.(*ConnManager).Start in goroutine 75
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/connmgr/connmanager.go:523 +0x12c
+
+goroutine 118 [select (leaked)]:
+github.com/lightningnetwork/lnd/watchtower/wtserver.(*Server).peerHandler(0xc0000f5650)
+	/Users/head/code/lnd/watchtower/wtserver/server.go:193 +0x148
+created by github.com/lightningnetwork/lnd/watchtower/wtclient_test.init.func15.(*Server).Start.6 in goroutine 69
+	/Users/head/code/lnd/watchtower/wtserver/server.go:134 +0xd8
+
+goroutine 119 [select (leaked)]:
+github.com/btcsuite/btcd/connmgr.(*ConnManager).connHandler(0xc000e04d80)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/connmgr/connmanager.go:246 +0x1bc
+created by github.com/btcsuite/btcd/connmgr.(*ConnManager).Start in goroutine 69
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/connmgr/connmanager.go:523 +0x12c
+
+goroutine 974 [select (leaked)]:
+github.com/btcsuite/btcd/connmgr.(*ConnManager).connHandler(0xc000f854d0)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/connmgr/connmanager.go:246 +0x1bc
+created by github.com/btcsuite/btcd/connmgr.(*ConnManager).Start in goroutine 72
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/connmgr/connmanager.go:523 +0x12c
+
+goroutine 1001 [select (leaked)]:
+github.com/btcsuite/btcd/connmgr.(*ConnManager).connHandler(0xc000cb5e60)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/connmgr/connmanager.go:246 +0x1bc
+created by github.com/btcsuite/btcd/connmgr.(*ConnManager).Start in goroutine 74
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/connmgr/connmanager.go:523 +0x12c
+
+goroutine 1000 [select (leaked)]:
+github.com/lightningnetwork/lnd/watchtower/wtserver.(*Server).peerHandler(0xc00126e1c0)
+	/Users/head/code/lnd/watchtower/wtserver/server.go:193 +0x148
+created by github.com/lightningnetwork/lnd/watchtower/wtclient_test.(*serverHarness).start.(*Server).Start.func1 in goroutine 74
+	/Users/head/code/lnd/watchtower/wtserver/server.go:134 +0xd8
+
+goroutine 814 [select (leaked)]:
+github.com/lightningnetwork/lnd/watchtower/wtserver.(*Server).peerHandler(0xc001096a10)
+	/Users/head/code/lnd/watchtower/wtserver/server.go:193 +0x148
+created by github.com/lightningnetwork/lnd/watchtower/wtclient_test.(*serverHarness).start.(*Server).Start.func1 in goroutine 75
+	/Users/head/code/lnd/watchtower/wtserver/server.go:134 +0xd8
+
+goroutine 862 [select (leaked)]:
+github.com/lightningnetwork/lnd/watchtower/wtserver.(*Server).peerHandler(0xc000ee2770)
+	/Users/head/code/lnd/watchtower/wtserver/server.go:193 +0x148
+created by github.com/lightningnetwork/lnd/watchtower/wtclient_test.(*serverHarness).start.(*Server).Start.func1 in goroutine 77
+	/Users/head/code/lnd/watchtower/wtserver/server.go:134 +0xd8
+
+goroutine 863 [select (leaked)]:
+github.com/btcsuite/btcd/connmgr.(*ConnManager).connHandler(0xc000d81680)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/connmgr/connmanager.go:246 +0x1bc
+created by github.com/btcsuite/btcd/connmgr.(*ConnManager).Start in goroutine 77
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/connmgr/connmanager.go:523 +0x12c
+
+goroutine 1345 [select (leaked)]:
+github.com/lightningnetwork/lnd/watchtower/wtserver.(*Server).peerHandler(0xc0005939d0)
+	/Users/head/code/lnd/watchtower/wtserver/server.go:193 +0x148
+created by github.com/lightningnetwork/lnd/watchtower/wtclient_test.(*serverHarness).start.(*Server).Start.func1 in goroutine 73
+	/Users/head/code/lnd/watchtower/wtserver/server.go:134 +0xd8
+
+goroutine 1346 [select (leaked)]:
+github.com/btcsuite/btcd/connmgr.(*ConnManager).connHandler(0xc0012b9a70)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/connmgr/connmanager.go:246 +0x1bc
+created by github.com/btcsuite/btcd/connmgr.(*ConnManager).Start in goroutine 73
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/connmgr/connmanager.go:523 +0x12c
+
+FAIL	github.com/lightningnetwork/lnd/watchtower/wtclient	41.990s
+FAIL

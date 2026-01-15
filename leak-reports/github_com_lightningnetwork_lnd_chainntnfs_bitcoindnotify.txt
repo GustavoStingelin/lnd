@@ -1,0 +1,101 @@
+LEAK DETECTED: goroutine leak detected:
+goroutine 1 [running]:
+runtime/pprof.writeGoroutineStacks({0x101922cc0, 0xc0022fe300})
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:820 +0x74
+runtime/pprof.writeGoroutineLeak({0x101922cc0, 0xc0022fe300}, 0x2)
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:807 +0x98
+runtime/pprof.(*Profile).WriteTo(0x1019e3da0, {0x101922cc0, 0xc0022fe300}, 0x2)
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:409 +0x138
+github.com/lightningnetwork/lnd/lntest/leakcheck.Check()
+	/Users/head/code/lnd/lntest/leakcheck/leakcheck.go:32 +0x94
+github.com/lightningnetwork/lnd/chainntnfs/bitcoindnotify.TestMain(0xc00039c500)
+	/Users/head/code/lnd/chainntnfs/bitcoindnotify/leak_test.go:18 +0x34
+main.main()
+	_testmain.go:50 +0x108
+
+goroutine 31 [chan receive (leaked)]:
+github.com/btcsuite/btcd/integration/rpctest.(*memWallet).chainSyncer(0xc000192900)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/integration/rpctest/memwallet.go:230 +0x60
+created by github.com/btcsuite/btcd/integration/rpctest.(*memWallet).Start in goroutine 25
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/integration/rpctest/memwallet.go:162 +0x84
+
+goroutine 1094 [select (leaked)]:
+github.com/btcsuite/btcd/rpcclient.(*Client).sendPostHandler(0xc0005a00d0)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:899 +0xbc
+created by github.com/btcsuite/btcd/rpcclient.(*Client).start in goroutine 1091
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:1182 +0x184
+
+goroutine 72 [chan receive (leaked)]:
+github.com/btcsuite/btcd/integration/rpctest.(*memWallet).chainSyncer(0xc0009c61b0)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/integration/rpctest/memwallet.go:230 +0x60
+created by github.com/btcsuite/btcd/integration/rpctest.(*memWallet).Start in goroutine 24
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/integration/rpctest/memwallet.go:162 +0x84
+
+goroutine 55 [select (leaked)]:
+github.com/btcsuite/btcd/rpcclient.(*Client).sendPostHandler(0xc0002a1ad0)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:899 +0xbc
+created by github.com/btcsuite/btcd/rpcclient.(*Client).start in goroutine 52
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:1182 +0x184
+
+goroutine 4940 [chan receive (leaked)]:
+github.com/btcsuite/btcwallet/chain.(*JitterTicker).start(0xc002ac0440)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/chain/jitter.go:108 +0x100
+created by github.com/btcsuite/btcwallet/chain.NewJitterTicker in goroutine 5896
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/chain/jitter.go:55 +0x260
+
+goroutine 32 [chan receive (leaked)]:
+github.com/btcsuite/btcwallet/chain.(*JitterTicker).start(0xc000a00380)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/chain/jitter.go:108 +0x100
+created by github.com/btcsuite/btcwallet/chain.NewJitterTicker in goroutine 61
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcwallet@v0.16.17/chain/jitter.go:55 +0x260
+
+goroutine 1093 [select (leaked)]:
+github.com/btcsuite/btcd/rpcclient.(*Client).sendPostHandler(0xc0005a00d0)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:899 +0xbc
+created by github.com/btcsuite/btcd/rpcclient.(*Client).start in goroutine 1091
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:1182 +0x184
+
+goroutine 54 [select (leaked)]:
+github.com/btcsuite/btcd/rpcclient.(*Client).sendPostHandler(0xc0002a1ad0)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:899 +0xbc
+created by github.com/btcsuite/btcd/rpcclient.(*Client).start in goroutine 52
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:1182 +0x184
+
+goroutine 4999 [chan receive (leaked)]:
+github.com/btcsuite/btcd/integration/rpctest.(*memWallet).chainSyncer(0xc00164c900)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/integration/rpctest/memwallet.go:230 +0x60
+created by github.com/btcsuite/btcd/integration/rpctest.(*memWallet).Start in goroutine 4980
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/integration/rpctest/memwallet.go:162 +0x84
+
+goroutine 4987 [chan receive (leaked)]:
+github.com/btcsuite/btcd/integration/rpctest.(*memWallet).chainSyncer(0xc0023ca510)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/integration/rpctest/memwallet.go:230 +0x60
+created by github.com/btcsuite/btcd/integration/rpctest.(*memWallet).Start in goroutine 4981
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/integration/rpctest/memwallet.go:162 +0x84
+
+goroutine 5869 [select (leaked)]:
+github.com/btcsuite/btcd/rpcclient.(*Client).sendPostHandler(0xc0024415f0)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:899 +0xbc
+created by github.com/btcsuite/btcd/rpcclient.(*Client).start in goroutine 5867
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:1182 +0x184
+
+goroutine 5870 [select (leaked)]:
+github.com/btcsuite/btcd/rpcclient.(*Client).sendPostHandler(0xc0024415f0)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:899 +0xbc
+created by github.com/btcsuite/btcd/rpcclient.(*Client).start in goroutine 5867
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:1182 +0x184
+
+goroutine 959 [select (leaked)]:
+github.com/btcsuite/btcd/rpcclient.(*Client).sendPostHandler(0xc0005a08f0)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:899 +0xbc
+created by github.com/btcsuite/btcd/rpcclient.(*Client).start in goroutine 957
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:1182 +0x184
+
+goroutine 960 [select (leaked)]:
+github.com/btcsuite/btcd/rpcclient.(*Client).sendPostHandler(0xc0005a08f0)
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:899 +0xbc
+created by github.com/btcsuite/btcd/rpcclient.(*Client).start in goroutine 957
+	/Users/head/go/pkg/mod/github.com/btcsuite/btcd@v0.24.3-0.20250318170759-4f4ea81776d6/rpcclient/infrastructure.go:1182 +0x184
+
+FAIL	github.com/lightningnetwork/lnd/chainntnfs/bitcoindnotify	6.778s
+FAIL

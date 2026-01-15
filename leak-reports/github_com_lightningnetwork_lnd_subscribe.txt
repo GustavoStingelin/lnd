@@ -1,0 +1,1223 @@
+LEAK DETECTED: goroutine leak detected:
+goroutine 1 [running]:
+runtime/pprof.writeGoroutineStacks({0x102e56a80, 0xc0004ae0c0})
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:820 +0x74
+runtime/pprof.writeGoroutineLeak({0x102e56a80, 0xc0004ae0c0}, 0x2)
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:807 +0x98
+runtime/pprof.(*Profile).WriteTo(0x102e7cfe0, {0x102e56a80, 0xc0004ae0c0}, 0x2)
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:409 +0x138
+github.com/lightningnetwork/lnd/lntest/leakcheck.Check()
+	/Users/head/code/lnd/lntest/leakcheck/leakcheck.go:32 +0x94
+github.com/lightningnetwork/lnd/subscribe_test.TestMain(0xc00010c320)
+	/Users/head/code/lnd/subscribe/leak_test.go:18 +0x34
+main.main()
+	_testmain.go:50 +0x108
+
+goroutine 7 [select (leaked)]:
+github.com/lightningnetwork/lnd/subscribe.(*Server).subscriptionHandler(0xc000112940)
+	/Users/head/code/lnd/subscribe/subscribe.go:173 +0x13c
+created by github.com/lightningnetwork/lnd/subscribe.(*Server).Start in goroutine 6
+	/Users/head/code/lnd/subscribe/subscribe.go:97 +0xb0
+
+goroutine 107 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 108 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 131 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 132 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 133 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 134 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 109 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 110 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 126 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 127 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 145 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 146 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 111 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 112 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 128 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 161 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 177 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 178 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 162 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 163 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 164 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 165 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 135 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 136 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 137 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 166 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 167 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 179 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 180 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 147 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 148 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 149 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 150 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 151 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 152 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 138 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 139 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 181 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 182 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 140 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 141 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 153 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 154 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 55 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 56 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 57 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 58 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 59 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 60 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 168 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 169 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 183 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 184 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 155 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 156 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 61 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 62 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 63 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 64 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 157 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 158 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 159 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 29 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 30 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 31 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 185 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 186 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 170 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 171 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 172 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 173 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 32 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 193 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 194 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 195 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 174 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 175 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 187 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 188 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 176 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 209 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 210 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 225 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 226 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 189 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 190 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 191 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 192 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 241 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 227 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 228 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 229 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 230 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 242 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 243 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 196 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 197 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 142 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 143 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 144 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 231 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 232 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 233 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 234 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 277 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 278 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 279 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 280 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 235 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 236 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 237 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 289 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 290 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 265 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 266 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 267 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 268 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 238 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 239 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 269 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 270 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 271 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 272 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 305 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 321 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 322 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 323 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 324 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 306 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 307 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 308 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 309 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 281 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 282 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 283 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 284 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 325 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 326 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 240 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 337 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 310 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 311 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 312 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 313 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 314 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 315 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 198 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 199 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 200 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 201 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 316 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 317 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 291 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 292 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 327 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 328 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 318 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 319 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 293 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 294 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 320 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 353 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 329 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 330 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 331 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 332 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 295 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 296 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 202 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 203 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 204 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 205 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 333 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 334 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 338 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 339 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 297 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 298 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 299 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 300 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 301 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 302 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 335 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 336 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 303 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 304 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 369 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 370 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 340 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 341 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 342 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 343 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 344 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 345 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 346 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 354 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 355 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 385 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 386 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 387 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 7
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+FAIL	github.com/lightningnetwork/lnd/subscribe	0.510s
+FAIL

@@ -1,0 +1,23 @@
+LEAK DETECTED: goroutine leak detected:
+goroutine 1 [running]:
+runtime/pprof.writeGoroutineStacks({0x103542d20, 0xc000596060})
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:820 +0x74
+runtime/pprof.writeGoroutineLeak({0x103542d20, 0xc000596060}, 0x2)
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:807 +0x98
+runtime/pprof.(*Profile).WriteTo(0x103604340, {0x103542d20, 0xc000596060}, 0x2)
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:409 +0x138
+github.com/lightningnetwork/lnd/lntest/leakcheck.Check()
+	/Users/head/code/lnd/lntest/leakcheck/leakcheck.go:32 +0x94
+github.com/lightningnetwork/lnd/watchtower/lookout_test.TestMain(0xc0002a25a0)
+	/Users/head/code/lnd/watchtower/lookout/leak_test.go:18 +0x34
+main.main()
+	_testmain.go:52 +0x108
+
+goroutine 31 [select (leaked)]:
+github.com/lightningnetwork/lnd/watchtower/lookout.(*Lookout).watchBlocks(0xc0001614d0, 0xc00015e9b0)
+	/Users/head/code/lnd/watchtower/lookout/lookout.go:179 +0x12c
+created by github.com/lightningnetwork/lnd/watchtower/lookout.(*Lookout).Start in goroutine 30
+	/Users/head/code/lnd/watchtower/lookout/lookout.go:102 +0x3ac
+
+FAIL	github.com/lightningnetwork/lnd/watchtower/lookout	0.506s
+FAIL

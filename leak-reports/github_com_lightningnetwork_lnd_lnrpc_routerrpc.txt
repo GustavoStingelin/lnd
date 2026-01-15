@@ -1,0 +1,35 @@
+LEAK DETECTED: goroutine leak detected:
+goroutine 1 [running]:
+runtime/pprof.writeGoroutineStacks({0x107e22720, 0xc00063b1d0})
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:820 +0x74
+runtime/pprof.writeGoroutineLeak({0x107e22720, 0xc00063b1d0}, 0x2)
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:807 +0x98
+runtime/pprof.(*Profile).WriteTo(0x107f61e40, {0x107e22720, 0xc00063b1d0}, 0x2)
+	/Users/head/sdk/go1.26rc1/src/runtime/pprof/pprof.go:409 +0x138
+github.com/lightningnetwork/lnd/lntest/leakcheck.Check()
+	/Users/head/code/lnd/lntest/leakcheck/leakcheck.go:32 +0x94
+github.com/lightningnetwork/lnd/lnrpc/routerrpc.TestMain(0xc000196be0)
+	/Users/head/code/lnd/lnrpc/routerrpc/leak_test.go:18 +0x34
+main.main()
+	_testmain.go:64 +0x108
+
+goroutine 21 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 20
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 37 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 36
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+goroutine 39 [select (leaked)]:
+github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start.func1()
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:68 +0x6d0
+created by github.com/lightningnetwork/lnd/queue.(*ConcurrentQueue).start in goroutine 38
+	/Users/head/go/pkg/mod/github.com/lightningnetwork/lnd/queue@v1.1.1/queue.go:58 +0x98
+
+FAIL	github.com/lightningnetwork/lnd/lnrpc/routerrpc	0.514s
+FAIL
